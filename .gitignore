@@ -1,6 +1,6 @@
 Debug
 Release
-settings
+.settings
 *.o
 *.d
 *.exe
