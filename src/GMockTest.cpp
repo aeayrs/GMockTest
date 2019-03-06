@@ -20,7 +20,10 @@ public:
 
 class DataHolder {
 public:
-	DataHolder(QueueInterface *queue):queue(queue){;}
+	DataHolder(QueueInterface *queue):queue(queue){};
+	void addData(int data) {
+		queue->enqueue(data);
+	}
 protected:
 	QueueInterface *queue;
 };
@@ -38,4 +41,10 @@ public:
 TEST(GMockTests, CanInstantiateDataHolder) {
 	MockQueue myMockObject;
 	DataHolder dh(&myMockObject);
+}
+TEST(GMockTests, CanAddData) {
+	MockQueue myMockObject;
+	DataHolder dh(&myMockObject);
+
+	dh.addData(1);
 }
