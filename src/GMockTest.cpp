@@ -13,7 +13,7 @@ using namespace std;
 
 class QueueInterface {
 public:
-	virtual ~QueueInterface(){;}
+	virtual ~QueueInterface(){};
 	virtual void enqueue(int data) = 0;
 	virtual int dequeue() = 0;
 };
