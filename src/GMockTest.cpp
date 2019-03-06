@@ -38,10 +38,6 @@ public:
 //              UNIT TESTS
 //-----------------------------------------------------------------------------
 
-TEST(GMockTests, CanInstantiateDataHolder) {
-	MockQueue myMockObject;
-	DataHolder dh(&myMockObject);
-}
 TEST(GMockTests, CanAddData) {
 	MockQueue myMockObject;
 	DataHolder dh(&myMockObject);
