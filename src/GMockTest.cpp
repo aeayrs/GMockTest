@@ -44,15 +44,21 @@ public:
 //              UNIT TESTS
 //-----------------------------------------------------------------------------
 
-TEST(GMockTests, CanAddData) {
+class GMockTests : public ::testing::Test {
+protected:
 	MockQueue myMockObject;
-	DataHolder dh(&myMockObject);
+	DataHolder dh = DataHolder(&myMockObject);
+};
+
+TEST_F(GMockTests, CanAddData) {
+//	MockQueue myMockObject;
+//	DataHolder dh(&myMockObject);
 	EXPECT_CALL(myMockObject, enqueue(_));
 	dh.addData(1);
 }
-TEST(GMockTests, CanAddAndGetData) {
-	MockQueue myMockObject;
-	DataHolder dh(&myMockObject);
+TEST_F(GMockTests, CanAddAndGetData) {
+//	MockQueue myMockObject;
+//	DataHolder dh(&myMockObject);
 
 	EXPECT_CALL(myMockObject, enqueue(1));
 	EXPECT_CALL(myMockObject, dequeue()).WillOnce(Return(1));
