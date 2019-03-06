@@ -51,15 +51,10 @@ protected:
 };
 
 TEST_F(GMockTests, CanAddData) {
-//	MockQueue myMockObject;
-//	DataHolder dh(&myMockObject);
 	EXPECT_CALL(myMockObject, enqueue(_));
 	dh.addData(1);
 }
 TEST_F(GMockTests, CanAddAndGetData) {
-//	MockQueue myMockObject;
-//	DataHolder dh(&myMockObject);
-
 	EXPECT_CALL(myMockObject, enqueue(1));
 	EXPECT_CALL(myMockObject, dequeue()).WillOnce(Return(1));
 	dh.addData(1);
